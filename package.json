@@ -1,0 +1,130 @@
+{
+  "name": "wot-ui-plus-helper",
+  "displayName": "wot-ui-plus 代码提示助手",
+  "publisher": "wot-ui-plus",
+  "description": "🚀 一个为 wot-ui-plus 组件库提供智能提示的 VS Code 插件",
+  "version": "3.2.0",
+  "license": "MIT",
+  "author": {
+    "name": "哈哈先生",
+    "url": "https://github.com/l-spaces/wot-ui-plus-helper"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:vue"
+  ],
+  "main": "./dist/extension.js",
+  "icon": "public/wot-logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/l-spaces/wot-ui-plus-helper"
+  },
+  "keywords": [
+    "uniapp",
+    "wot-ui-plus",
+    "html",
+    "vue",
+    "extension",
+    "vscode"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "wot-ui-plus-helper.toggleIntellisense",
+        "title": "开启或关闭 wot-ui-plus 智能提示",
+        "category": "wot-ui-plus",
+        "description": "开启或关闭wot-ui-plus组件的智能提示功能，包括标签补全和悬停提示",
+        "icon": {
+          "light": "public/wot-logo.png",
+          "dark": "public/wot-logo.png"
+        }
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "wot-ui-plus-helper.toggleIntellisense",
+        "key": "ctrl+shift+u",
+        "mac": "cmd+shift+u",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "wot-ui-plus-helper.toggleIntellisense",
+          "group": "wot-ui-plus@1",
+          "when": "editorLangId == vue || editorLangId == html"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "wot-ui-plus-helper.toggleIntellisense",
+          "when": "editorLangId == vue || editorLangId == html"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "wot-ui-plus-helper.toggleIntellisense",
+          "when": "editorLangId == vue || editorLangId == html"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "wot-ui-plus Helper",
+      "properties": {
+        "wot-ui-plus-helper.enableIntellisense": {
+          "type": "boolean",
+          "default": true,
+          "description": "启用或禁用wot-ui-plus组件的智能提示功能"
+        },
+        "wot-ui-plus-helper.showHoverInfo": {
+          "type": "boolean",
+          "default": true,
+          "description": "显示组件的悬停提示信息"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "clean:cache": "npm cache clean --force",
+    "dev": "npm run package",
+    "create-namespace": "npx ovsx publish -p <token>",
+    "login": "vsce login 你的发布者名称",
+    "build": "vsce package",
+    "patch": "vsce publish patch",
+    "minor": "vsce publish minor",
+    "major": "vsce publish major",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "copy-webpack-plugin": "^13.0.1",
+    "eslint": "^9.25.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  },
+  "volta": {
+    "node": "22.20.0"
+  }
+}
