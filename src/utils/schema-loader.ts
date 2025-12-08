@@ -83,7 +83,7 @@ export interface ComponentMeta {
 /**
  * 通用组件schema加载器
  * 用于加载和解析wot-ui-plus组件的元数据信息，包括属性、事件、插槽等
- * @param componentName 组件名称（不包含up-前缀）
+ * @param componentName 组件名称（不包含wd-前缀）
  * @param docSource 文档来源组件名称（可选），用于指定从哪个组件的文档中加载信息
  * @returns 组件元数据对象，包含组件的完整信息
  */
@@ -140,7 +140,7 @@ export function loadComponentSchema(componentName: string, docSource?: string): 
     
     // 如果解析失败，返回包含基本信息的默认值
     return {
-      name: `u-${componentName}`,
+      name: `wd-${componentName}`,
       props: [],
       events: [],
       methods: [],
@@ -152,7 +152,7 @@ export function loadComponentSchema(componentName: string, docSource?: string): 
     
     // 错误情况下返回最小化的组件元数据
     return {
-      name: `u-${componentName}`,
+      name: `wd-${componentName}`,
       props: [],
       events: [],
       methods: [],
@@ -164,7 +164,7 @@ export function loadComponentSchema(componentName: string, docSource?: string): 
 /**
  * 异步加载组件schema
  * 提供与loadComponentSchema相同的功能，但返回Promise对象以支持异步操作
- * @param componentName 组件名称（不包含up-前缀）
+ * @param componentName 组件名称（不包含wd-前缀）
  * @param docSource 文档来源组件名称（可选）
  * @returns 包含组件元数据的Promise对象
  * @note 目前此函数内部仍调用同步版本的loadComponentSchema，但提供异步接口便于未来扩展

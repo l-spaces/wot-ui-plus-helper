@@ -238,9 +238,9 @@ export abstract class ComponentHoverProvider implements vscode.HoverProvider {
       // 修复组件名称匹配逻辑 - 支持多种标签名格式
       if (
         attrInfo &&
-        (attrInfo.tagName === this.componentName.replace("u-", "") ||
+        (attrInfo.tagName === this.componentName.replace("wd-", "") ||
           attrInfo.tagName === kebabComponentName ||
-          attrInfo.tagName === kebabComponentName.replace("u-", ""))
+          attrInfo.tagName === kebabComponentName.replace("wd-", ""))
       ) {
         // 处理外部样式类属性
         if (this.componentMeta.externalClasses) {

@@ -16,7 +16,7 @@ import { camelToKebab, kebabToCamel } from "./index";
  */
 interface ComponentInfo {
   /**
-   * 组件名称，包含 up- 前缀
+   * 组件名称，包含 wd- 前缀
    */
   name: string;
   
@@ -228,7 +228,7 @@ function processComponentProp(prop: string[]): Array<{
  * 外部样式类和数据结构等信息，并将其组织成结构化的 ComponentInfo 对象。
  * 支持处理子组件和主组件两种情况。
  * 
- * @param componentName 组件名称（不包含up-前缀）
+ * @param componentName 组件名称（不包含wd-前缀）
  * @param docSource 文档来源组件名称（可选），用于处理子组件情况
  * @returns 组件信息对象，包含完整的组件元数据；若解析失败则返回null
  */
@@ -270,7 +270,7 @@ export function parseComponentMarkdown(
 
     // 子组件特殊处理逻辑
     if (docSource) {
-      // 通用处理子组件情况，如 up-table-col 从 table.md 中提取 TableColumn 相关信息
+      // 通用处理子组件情况，如 wd-table-item 从 table.md 中提取 TableColumn 相关信息
       // 将组件名从 kebab-case 转换为 PascalCase 用于匹配标题
       // 提取子组件 Props 表格
       const props = extractTableSection(content, "Props", componentName);
@@ -296,7 +296,7 @@ export function parseComponentMarkdown(
       
       // 返回子组件信息对象
       return {
-        name: `u-${componentName}`,
+        name: `wd-${componentName}`,
         // 处理组件属性，确保包含v-model的所有形式
         props: props.reduce(
           (acc, prop) => {
@@ -371,7 +371,7 @@ export function parseComponentMarkdown(
     
     // 返回主组件信息对象
     return {
-      name: `u-${componentName}`,
+      name: `wd-${componentName}`,
       // 处理组件属性，确保包含v-model的所有形式
       props: props.reduce(
         (acc, prop) => {
@@ -627,7 +627,7 @@ function extractDataStructures(content: string): Array<{
  * 此函数以同步方式读取指定组件的 Markdown 文档文件，支持子组件文档查找。
  * 当需要立即获取文档内容且不希望处理异步操作时使用。
  * 
- * @param componentName 组件名称（不包含up-前缀）
+ * @param componentName 组件名称（不包含wd-前缀）
  * @param docSource 文档来源组件名称（可选），用于子组件文档查找
  * @returns 组件文档内容字符串；若文件不存在或读取失败则返回空字符串
  */
@@ -676,7 +676,7 @@ export function loadComponentDoc(
  * 此函数以异步方式读取指定组件的 Markdown 文档文件，支持子组件文档查找。
  * 适用于不希望阻塞主线程的场景。
  * 
- * @param componentName 组件名称（不包含up-前缀）
+ * @param componentName 组件名称（不包含wd-前缀）
  * @param docSource 文档来源组件名称（可选），用于子组件文档查找
  * @returns Promise<string>，解析为组件文档内容字符串；若文件不存在或读取失败则解析为空字符串
  */

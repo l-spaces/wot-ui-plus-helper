@@ -58,8 +58,8 @@ export async function registerAll(context: vscode.ExtensionContext): Promise<vsc
     // 2. 为每个组件注册单独的悬停提供者（提供组件文档信息）
     for (const { tag, docSource } of COMPONENT_MAP) {
       try {
-        // 提取组件名称（去掉 up- 或 u- 前缀）
-        const componentName = tag.replace("u-", "");
+        // 提取组件名称（去掉 wd- 前缀）
+        const componentName = tag.replace("wd-", "");
         // 加载组件的元数据（包含属性、事件等信息）
         const componentMeta = loadComponentSchema(componentName, docSource);
         // 创建组件悬停提供者实例

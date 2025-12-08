@@ -21,7 +21,7 @@ export class GenericComponentHoverProvider extends ComponentHoverProvider {
 
   /**
    * 构造函数
-   * @param componentName 组件名称（包含up-前缀）
+   * @param componentName 组件名称（包含wd-前缀）
    * @param componentMeta 组件元数据对象
    */
   constructor(componentName: string, componentMeta: ComponentMeta) {
@@ -50,8 +50,8 @@ export class UnifiedComponentCompletionProvider
     // 遍历组件映射表，为每个组件加载元数据
     for (const { tag, docSource } of COMPONENT_MAP) {
       try {
-        // 提取组件名称（去掉up-或u-前缀）
-        const componentName = tag.replace("u-", "");
+        // 提取组件名称（去掉wd-前缀）
+        const componentName = tag.replace("wd-", "");
         // 加载组件的元数据，包含属性、事件等信息
         const componentMeta = loadComponentSchema(componentName, docSource);
         // 存储原始标签名和组件名（支持不带前缀的形式）
@@ -80,7 +80,7 @@ export class UnifiedComponentCompletionProvider
       .lineAt(position)
       .text.substring(0, position.character);
 
-    // 1. 检查是否是标签补全上下文（如 <up-bu）
+    // 1. 检查是否是标签补全上下文
     const tagCompletionMatch = linePrefix.match(/<([a-zA-Z0-9-]*)$/);
     if (tagCompletionMatch) {
       // 提取已输入的标签前缀并提供标签补全
@@ -90,11 +90,11 @@ export class UnifiedComponentCompletionProvider
     // 2. 检查是否是属性补全上下文
     const currentTagName = this.getCurrentTagName(document, position);
     if (currentTagName) {
-      // 尝试匹配完整标签名（支持up-button或button等多种形式）
+      // 尝试匹配完整标签名（支持wd-button或button等多种形式）
       const componentMeta = 
         this.componentMap.get(currentTagName) ||
-        this.componentMap.get(`u-${currentTagName}`) ||
-        this.componentMap.get(currentTagName.replace(/^u-/, ""));
+        this.componentMap.get(`wd-${currentTagName}`) ||
+        this.componentMap.get(currentTagName.replace(/^wd-/, ""));
       if (componentMeta) {
         // 提供该组件的属性、事件等补全项
         return this.provideAttributeCompletionItems(
@@ -120,8 +120,8 @@ export class UnifiedComponentCompletionProvider
 
     // 遍历所有注册的组件
     for (const [tagName, componentMeta] of this.componentMap.entries()) {
-      // 只处理 up- 或 u- 前缀的标签名，并根据filter过滤
-      if (tagName.startsWith("u-") && (!filter || tagName.includes(filter))) {
+      // 只处理 wd- 前缀的标签名，并根据filter过滤
+      if (tagName.startsWith("wd-") && (!filter || tagName.includes(filter))) {
         // 创建补全项
         const item = new vscode.CompletionItem(
           tagName,
@@ -416,8 +416,8 @@ export class UnifiedComponentCompletionProvider
   private generateDocumentation(componentMeta: any, item: any): string {
     const comLinkName =
       COMPONENT_MAP.find((item) => item.tag === componentMeta.name)
-        ?.docSource || componentMeta.name.replace("u-", "");
-    const link = `http://118.25.198.98/components//${comLinkName}.html`;
+        ?.docSource || componentMeta.name.replace("wd-", "");
+    const link = `https://l-spaces.github.io/wot-ui-plus-docs/components/wot/${comLinkName}.html`;
 
     return [
     ` _${componentMeta.name}_\n\n`,

@@ -7,7 +7,7 @@
  * 并更新组件映射表，以便在VS Code中为该组件提供智能提示功能。
  * 
  * 使用方法: npm run generate 组件名称
- * 例如: npm run generate up-example
+ * 例如: npm run generate wd-example
  */
 
 // 导入Node.js内置模块
@@ -24,22 +24,22 @@ const componentName = process.argv[2];
 
 // 检查是否提供了组件名称参数
 if (!componentName) {
-  console.error('请提供组件名称，例如: npm run generate u-example');
+  console.error('请提供组件名称，例如: npm run generate wd-example');
   process.exit(1);  // 参数缺失，终止程序运行
 }
 
 /**
  * 生成组件提供者代码
  * 
- * @param {string} componentName 组件名称，格式为 up-xxx
+ * @param {string} componentName 组件名称，格式为 wd-xxx
  * @returns {string} 生成的TypeScript代码字符串
  */
 const generateProviderCode = (componentName) => {
-  // 将组件名称转换为驼峰式类名（去掉up-前缀，并将连字符后的首字母大写）
-  const className = componentName.replace('u-', '').split('-')
+  // 将组件名称转换为驼峰式类名（去掉wd-前缀，并将连字符后的首字母大写）
+  const className = componentName.replace('wd-', '').split('-')
     .map(word => word.charAt(0).toUpperCase() + word.substring(1))
     .join('');
-  
+
   // 返回生成的组件提供者代码模板
   return `import * as vscode from 'vscode';
 import ComponentMeta from '../schemas/${componentName}';
@@ -101,7 +101,7 @@ if (!componentMapContent.includes(`tag: '${componentName}'`)) {
       return `${p1}\n${importEntry}\n${p3}`;
     }
   });
-  
+
   // 将更新后的内容写回文件
   fs.writeFileSync(componentMapPath, componentMapContent);
   console.log(`成功添加 ${componentName} 到组件映射`);
