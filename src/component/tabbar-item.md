@@ -18,7 +18,7 @@ TabbarItem 是 Tabbar 组件的子组件，用于定义标签栏中的单个标�
 
 ## 完整API参考
 
-### Props属性
+### Props
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -32,15 +32,15 @@ TabbarItem 是 Tabbar 组件的子组件，用于定义标签栏中的单个标�
 | customStyle | string / object | - | 否 | 自定义样式 |
 | customClass | string | - | 否 | 自定义类名 |
 
-### Events事件
+### Events
 
 该组件没有定义任何事件。
 
-### Methods方法
+### Methods
 
 该组件没有对外暴露的方法。
 
-### Slots插槽
+### Slots
 
 | 插槽名 | 作用域变量 | 使用说明 |
 | --- | --- | --- |

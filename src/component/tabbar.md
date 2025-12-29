@@ -19,7 +19,7 @@ Tabbar 标签栏是一个底部导航组件，用于在应用的不同页面或�
 
 ## 完整API参考
 
-### Props属性
+### Props
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 | --- | --- | --- | --- | --- |
@@ -35,18 +35,18 @@ Tabbar 标签栏是一个底部导航组件，用于在应用的不同页面或�
 | customStyle | string / object | - | 否 | 自定义样式 |
 | customClass | string | - | 否 | 自定义类名 |
 
-### Events事件
+### Events
 
 | 事件名 | 触发条件 | 参数说明 |
 | --- | --- | --- |
 | change | 标签切换时触发 | { value: number / string } - 切换后的标签索引值或名称 |
 | update:modelValue | 标签切换时触发 | number / string - 切换后的标签索引值或名称 |
 
-### Methods方法
+### Methods
 
 该组件没有对外暴露的方法。
 
-### Slots插槽
+### Slots
 
 | 插槽名 | 作用域变量 | 使用说明 |
 | --- | --- | --- |

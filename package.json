@@ -3,7 +3,7 @@
   "displayName": "wot-ui-plus 代码提示助手",
   "publisher": "wot-ui-plus",
   "description": "🚀 一个为 wot-ui-plus 组件库提供智能提示的 VS Code 插件",
-  "version": "3.2.0",
+  "version": "3.0.0",
   "license": "MIT",
   "author": {
     "name": "哈哈先生",

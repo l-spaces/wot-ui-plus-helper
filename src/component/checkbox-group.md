@@ -23,7 +23,7 @@ CheckboxGroup 复选框组组件用于管理多个 Checkbox 组件，实现组�
 
 ## 完整API参考
 
-### Props属性
+### Props
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 |------|------|--------|------|------|
@@ -39,18 +39,18 @@ CheckboxGroup 复选框组组件用于管理多个 Checkbox 组件，实现组�
 | customStyle | string | - | 否 | 自定义根节点样式 |
 | customClass | string | - | 否 | 自定义根节点样式类 |
 
-### Events事件
+### Events
 
 | 事件名 | 触发条件 | 参数说明 |
 |--------|----------|----------|
 | change | 组内复选框选中状态变化时 | value: 当前选中的值数组 |
 | update:modelValue | 组内复选框选中状态变化时 | newValue: 新的选中值数组 |
 
-### Methods方法
+### Methods
 
 该组件没有对外暴露的方法。
 
-### Slots插槽
+### Slots
 
 | 插槽名 | 作用域变量 | 使用说明 |
 |--------|------------|----------|

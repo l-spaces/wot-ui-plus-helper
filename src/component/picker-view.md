@@ -25,7 +25,7 @@
 
 ## 完整API参考
 
-### Props属性
+### Props
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 |------|------|--------|------|------|
@@ -42,7 +42,7 @@
 | customStyle | string | '' | 否 | 自定义根节点样式 |
 | customClass | string | '' | 否 | 自定义根节点样式类 |
 
-### Events事件
+### Events
 
 | 事件名 | 触发条件 | 参数说明 |
 |--------|----------|----------|
@@ -51,7 +51,7 @@
 | pickend | 选择器结束滚动时 | - |
 | update:modelValue | 选中值改变时 | value: any - 选中值 |
 
-### Methods方法
+### Methods
 
 | 方法名 | 参数 | 返回值 | 功能说明 |
 |--------|------|--------|----------|
@@ -65,6 +65,6 @@
 | getSelectedIndex | - | number[] | 获取选中的索引 |
 | resetColumns | columns: array | - | 重置列数据 |
 
-### Slots插槽
+### Slots
 
 该组件没有定义插槽。

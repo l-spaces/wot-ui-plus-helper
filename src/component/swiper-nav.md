@@ -19,7 +19,7 @@ SwiperNav 是轮播指示器组件，用于配合 Swiper 组件使用，提供�
 
 ## 完整API参考
 
-### Props属性
+### Props
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 |------|------|--------|------|------|
@@ -33,16 +33,16 @@ SwiperNav 是轮播指示器组件，用于配合 Swiper 组件使用，提供�
 | customStyle | string | - | 否 | 自定义根节点样式 |
 | customClass | string | - | 否 | 自定义根节点样式类 |
 
-### Events事件
+### Events
 
 | 事件名 | 触发条件 | 参数说明 |
 |--------|----------|----------|
 | change | 点击控制按钮时 | `{ dir: 点击方向（prev、next）, source: 切换方式（nav） }` |
 
-### Methods方法
+### Methods
 
 该组件没有对外暴露的方法。
 
-### Slots插槽
+### Slots
 
 该组件没有可用的插槽。

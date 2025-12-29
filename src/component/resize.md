@@ -20,7 +20,7 @@
 
 ## 完整API参考
 
-### Props属性
+### Props
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 |------|------|--------|------|------|
@@ -28,17 +28,17 @@
 | customStyle | string | '' | 否 | 自定义根节点样式 |
 | customClass | string | '' | 否 | 自定义根节点样式类 |
 
-### Events事件
+### Events
 
 | 事件名 | 触发条件 | 参数说明 |
 |--------|----------|----------|
 | resize | 子元素尺寸变化时 | { width: number, height: number, top: number, left: number, right: number, bottom: number } - 子元素的尺寸和位置信息 |
 
-### Methods方法
+### Methods
 
 该组件没有对外暴露的方法。
 
-### Slots插槽
+### Slots
 
 | 插槽名 | 作用域变量 | 使用说明 |
 |--------|------------|----------|

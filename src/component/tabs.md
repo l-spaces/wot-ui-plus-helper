@@ -28,7 +28,7 @@
 
 ## 完整API参考
 
-### Props属性
+### Props
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 |------|------|--------|------|------|
@@ -51,7 +51,7 @@
 | customStyle | string / object | - | 否 | 自定义样式 |
 | customClass | string | - | 否 | 自定义类名 |
 
-### Events事件
+### Events
 
 | 事件名 | 触发条件 | 参数说明 |
 |--------|----------|----------|
@@ -60,7 +60,7 @@
 | click | 点击标签时触发 | { index: number, name: string } - 点击标签的索引和名称 |
 | update:modelValue | 标签切换时触发 | number / string - 切换后的标签索引或名称 |
 
-### Methods方法
+### Methods
 
 | 方法名 | 参数 | 返回值 | 功能说明 |
 |--------|------|--------|----------|
@@ -68,7 +68,7 @@
 | scrollIntoView | - | void | 使选中项滚动到可视区域 |
 | updateLineStyle | animation?: boolean | void | 更新激活项边框线样式 |
 
-### Slots插槽
+### Slots
 
 | 插槽名 | 作用域变量 | 使用说明 |
 |--------|------------|----------|

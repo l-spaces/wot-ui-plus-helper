@@ -25,7 +25,7 @@
 
 ## 完整API参考
 
-### Props属性
+### Props
 
 | 名称 | 类型 | 默认值 | 必填 | 描述 |
 |------|------|--------|------|------|
@@ -43,18 +43,18 @@
 | customStyle | string / object | - | 否 | 自定义样式 |
 | customClass | string | - | 否 | 自定义类名 |
 
-### Events事件
+### Events
 
 | 事件名 | 触发条件 | 参数说明 |
 |--------|----------|----------|
 | sort-method | 列排序状态变化时触发 | column: TableColumn - 包含列信息和排序方向 |
 | row-click | 行被点击时触发 | { rowIndex: number } - 点击行的索引 |
 
-### Methods方法
+### Methods
 
 该组件没有对外暴露的方法。
 
-### Slots插槽
+### Slots
 
 | 插槽名 | 作用域变量 | 使用说明 |
 |--------|------------|----------|
